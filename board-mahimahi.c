@@ -1140,14 +1140,14 @@ static void __init mahimahi_init(void)
 static void __init mahimahi_fixup(struct machine_desc *desc, struct tag *tags,
 				 char **cmdline, struct meminfo *mi)
 {
-	/* Modified to extend bank 0 by 13MB */
+        /* Modified to extend bank 0 by 13MB */
 	mi->nr_banks = 2;
 	mi->bank[0].start = PHYS_OFFSET;
 	mi->bank[0].node = PHYS_TO_NID(PHYS_OFFSET);
 	mi->bank[0].size = (232*1024*1024);
-        mi->bank[1].start = MSM_HIGHMEM_BASE;
-        mi->bank[1].node = PHYS_TO_NID(MSM_HIGHMEM_BASE);
-        mi->bank[1].size = MSM_HIGHMEM_SIZE;
+	mi->bank[1].start = MSM_HIGHMEM_BASE;
+	mi->bank[1].node = PHYS_TO_NID(MSM_HIGHMEM_BASE);
+	mi->bank[1].size = MSM_HIGHMEM_SIZE;
 }
 
 static void __init mahimahi_map_io(void)
